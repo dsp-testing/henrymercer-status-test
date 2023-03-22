@@ -15,7 +15,7 @@ jobs:
     
     strategy:
       matrix:
-        language: "javascript"
+        language: ["javascript"]
 
     permissions:
       # required for all workflows
