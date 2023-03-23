@@ -14,8 +14,9 @@ jobs:
     runs-on: windows-latest
     
     strategy:
+      fail-fast: false
       matrix:
-        language: ["javascript"]
+        language: ["cpp", "javascript"]
 
     permissions:
       # required for all workflows
@@ -34,7 +35,7 @@ jobs:
         uses: github/codeql-action/init@main
         with:
           languages: ${{ matrix.language }}
-          tools: https://github.com/dsp-testing/henrymercer-status-test/releases/download/codeql-bundle-20230322/codeql-win64.zip
+          tools: https://github.com/dsp-testing/henrymercer-status-test/releases/download/codeql-bundle-20230322/codeql-bundle-win64.tar.gz
         # Override language selection by uncommenting this and choosing your languages
         # with:
         #   languages: go, javascript, csharp, python, cpp, java, ruby
